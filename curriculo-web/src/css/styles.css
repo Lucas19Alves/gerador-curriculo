@@ -1,0 +1,336 @@
+:root {
+    --adwaita-blue: #3584e4;
+    --adwaita-dark: #241f31;
+    --adwaita-light: #ffffff;
+    --adwaita-gray: #9a9996;
+    --adwaita-accent: #613583;
+    --adwaita-success: #2ec27e;
+    --adwaita-error: #e01b24;
+}
+
+body {
+    font-family: 'Cantarell', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f5f4;
+    color: var(--adwaita-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    overflow: hidden;
+}
+
+header {
+    background: var(--adwaita-blue);
+    padding: 1.5rem;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h1 {
+    color: var(--adwaita-light);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.section {
+    background: var(--adwaita-light);
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--adwaita-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    color: var(--adwaita-dark);
+    font-weight: 500;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 10px;
+    border: 1px solid var(--adwaita-gray);
+    border-radius: 4px;
+    background-color: var(--adwaita-light);
+    color: var(--adwaita-dark);
+    transition: border-color 0.3s;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--adwaita-blue);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(53,132,228,0.3);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background: var(--adwaita-blue);
+    color: var(--adwaita-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #1c71d8;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #3b4252;
+    color: #eceff4;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.erro {
+    border-color: #bf616a;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
+
+#habilidades-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.habilidade-tag {
+    background-color: #d8dee9;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.habilidade-tag button {
+    background: none;
+    border: none;
+    color: #4c566a;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.cores-curriculo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cores-curriculo label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cores-curriculo input[type="color"] {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* Adjust form layout */
+.section {
+    margin-bottom: 20px;
+}
+
+.cores-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Styles for the generated resume */
+#curriculo-gerado {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+#curriculo-gerado h1 {
+    font-size: 24px;
+}
+
+#curriculo-gerado h2 {
+    font-size: 18px;
+}
+
+#curriculo-gerado h3 {
+    font-size: 16px;
+}
+
+#curriculo-gerado .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#curriculo-gerado .header-info {
+    flex: 1;
+}
+
+#curriculo-gerado .header-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+#curriculo-gerado .section {
+    margin-bottom: 15px;
+}
+
+#curriculo-gerado .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#curriculo-gerado .skill {
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+/* Estilos específicos para o currículo gerado */
+.curriculo-container {
+    background: var(--adwaita-light);
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.curriculo-header {
+    background: var(--adwaita-blue);
+    color: var(--adwaita-light);
+    padding: 2rem;
+    position: relative;
+}
+
+.curriculo-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: inherit;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.curriculo-content {
+    padding: 2rem;
+}
+
+.curriculo-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f6f5f4;
+}
+
+.curriculo-section:last-child {
+    border-bottom: none;
+}
+
+.habilidades-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.habilidade-item {
+    background: var(--adwaita-blue);
+    color: var(--adwaita-light);
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+#habilidades-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+    min-height: 34px;
+    padding: 5px;
+    border: 1px solid var(--adwaita-gray);
+    border-radius: 4px;
+}
+
+.habilidade-tag {
+    background-color: var(--adwaita-blue);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.remover-tag {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remover-tag:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+#habilidades {
+    margin-top: 10px;
+}
