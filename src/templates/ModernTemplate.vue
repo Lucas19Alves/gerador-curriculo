@@ -5,16 +5,18 @@ defineProps({
 </script>
 
 <template>
-  <div class="h-full flex flex-col" :style="{ fontFamily: data.design.fontFamily }">
+  <div class="min-h-full flex flex-col" :style="{ fontFamily: data.design.fontFamily }">
     <!-- Header -->
     <header class="p-12 text-white" :style="{ backgroundColor: data.design.primaryColor }">
       <div class="flex items-start justify-between">
         <div class="flex-1">
           <h1 class="text-4xl font-bold tracking-tight mb-2">{{ data.personal.fullName || 'SEU NOME COMPLETO' }}</h1>
+          <p v-if="data.personal.title" class="text-lg opacity-90 mb-3">{{ data.personal.title }}</p>
           <div class="flex flex-wrap gap-4 text-sm opacity-90">
             <span v-if="data.personal.email">{{ data.personal.email }}</span>
             <span v-if="data.personal.phone">{{ data.personal.phone }}</span>
             <span v-if="data.personal.address">{{ data.personal.address }}</span>
+            <span v-if="data.personal.linkedin">{{ data.personal.linkedin }}</span>
           </div>
         </div>
         <div v-if="data.personal.photo" class="w-32 h-32 border-4 border-white/20 rounded-xl overflow-hidden shadow-lg">
