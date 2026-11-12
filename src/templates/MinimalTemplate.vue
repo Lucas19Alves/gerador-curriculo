@@ -5,14 +5,16 @@ defineProps({
 </script>
 
 <template>
-  <div class="h-full p-16 flex flex-col" :style="{ fontFamily: 'sans-serif' }">
+  <div class="min-h-full p-16 flex flex-col" :style="{ fontFamily: 'sans-serif' }">
     <!-- Header -->
     <header class="mb-12">
       <h1 class="text-3xl font-bold tracking-tight mb-2 text-slate-900 uppercase tracking-widest">{{ data.personal.fullName || 'SEU NOME COMPLETO' }}</h1>
+      <p v-if="data.personal.title" class="text-sm text-slate-700 mb-2">{{ data.personal.title }}</p>
       <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500 font-medium">
         <span v-if="data.personal.email">{{ data.personal.email }}</span>
         <span v-if="data.personal.phone" class="before:content-['•'] before:mr-4">{{ data.personal.phone }}</span>
         <span v-if="data.personal.address" class="before:content-['•'] before:mr-4">{{ data.personal.address }}</span>
+        <span v-if="data.personal.linkedin" class="before:content-['•'] before:mr-4">{{ data.personal.linkedin }}</span>
       </div>
     </header>
 

@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="h-full flex flex-col p-16 bg-slate-50 overflow-hidden relative" :style="{ fontFamily: 'sans-serif' }">
+  <div class="min-h-full flex flex-col p-16 bg-slate-50 relative" :style="{ fontFamily: 'sans-serif' }">
     <!-- Dynamic Color Bar -->
     <div class="absolute top-0 left-0 w-full h-4" :style="{ backgroundColor: data.design.primaryColor }"></div>
 
@@ -17,9 +17,12 @@ defineProps({
       
       <div class="flex-1 pb-4">
         <h1 class="text-5xl font-black text-slate-900 leading-none mb-4 tracking-tighter uppercase">{{ data.personal.fullName || 'NOME' }}</h1>
+        <p v-if="data.personal.title" class="text-lg font-bold mb-4" :style="{ color: data.design.primaryColor }">{{ data.personal.title }}</p>
         <div class="flex flex-wrap gap-4 text-xs font-bold uppercase tracking-widest text-slate-400">
           <span v-if="data.personal.email" class="bg-white px-3 py-1 rounded-full shadow-sm">{{ data.personal.email }}</span>
           <span v-if="data.personal.phone" class="bg-white px-3 py-1 rounded-full shadow-sm">{{ data.personal.phone }}</span>
+          <span v-if="data.personal.address" class="bg-white px-3 py-1 rounded-full shadow-sm">{{ data.personal.address }}</span>
+          <span v-if="data.personal.linkedin" class="bg-white px-3 py-1 rounded-full shadow-sm normal-case tracking-normal">{{ data.personal.linkedin }}</span>
         </div>
       </div>
     </header>
