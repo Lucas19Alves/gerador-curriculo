@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="h-full flex" :style="{ fontFamily: 'serif' }">
+  <div class="min-h-full flex" :style="{ fontFamily: 'serif' }">
     <!-- Sidebar -->
     <div class="w-1/3 bg-slate-900 text-white p-8 flex flex-col gap-8">
       <div v-if="data.personal.photo" class="w-full aspect-square rounded-full overflow-hidden border-4 border-slate-700">
@@ -14,11 +14,13 @@ defineProps({
       
       <div>
         <h1 class="text-2xl font-bold uppercase tracking-widest mb-1">{{ data.personal.fullName || 'NOME' }}</h1>
+        <p v-if="data.personal.title" class="text-xs opacity-80 mb-2">{{ data.personal.title }}</p>
         <div class="h-1 w-12 mb-4" :style="{ backgroundColor: data.design.primaryColor }"></div>
         <div class="space-y-2 text-xs opacity-80">
           <p v-if="data.personal.email">{{ data.personal.email }}</p>
           <p v-if="data.personal.phone">{{ data.personal.phone }}</p>
           <p v-if="data.personal.address">{{ data.personal.address }}</p>
+          <p v-if="data.personal.linkedin" class="break-all">{{ data.personal.linkedin }}</p>
         </div>
       </div>
 
